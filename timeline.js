@@ -28,20 +28,16 @@
     // Detect potential asset for front page.
     
     if (Object.keys(this.options.timeline.asset).length !== 0) {
-      let media = this.options.timeline.asset.media;
-      
-      let type = media.library.split(' ')[0];
-    
-      if (type === 'H5P.Image' && media.params.file) {
-        this.options.timeline.asset.media = H5P.getPath(media.params.file.path, contentId);
-      }
-      else if (type === 'H5P.Video' && media.params.sources) {
-        this.options.timeline.asset.media = H5P.getPath(media.params.sources[0].path, contentId);
-        console.log('this.options.timeline.asset.media ' + this.options.timeline.asset.media);
-        }
-        else {
-          this.options.timeline.asset.media = '';
+      if (this.options.timeline.asset.mediaselect !== undefined) {
+        if (this.options.timeline.asset.image !== undefined && this.options.timeline.asset.image !== '') {
+          if (this.options.timeline.asset.image.params.file) {
+            this.options.timeline.asset.media = H5P.getPath(this.options.timeline.asset.image.params.file.path, contentId);
           }
+        else if (this.options.timeline.asset.webmedia !== undefined) {
+          this.options.timeline.asset.media = this.options.timeline.asset.webmedia;
+          }
+        }
+      }
     }
     // Detect potential assets for dates pages.
     if (this.options.timeline.date !== undefined) {
@@ -50,19 +46,13 @@
         if (dates[i].asset.thumbnail !== undefined) {
           dates[i].asset.thumbnail = H5P.getPath(dates[i].asset.thumbnail.path, contentId);
         }
-        if (dates[i].asset.media !== undefined && dates[i].asset.media !== '') {
-          let media = dates[i].asset.media;
-          let type = media.library.split(' ')[0];
-            console.log('type = ' + type);
-          if (type === 'H5P.Image') {
-            if (media.params.file) {
-              dates[i].asset.media = H5P.getPath(media.params.file.path, contentId);
+        if (dates[i].asset.mediaselect !== undefined) {
+          if (dates[i].asset.image !== undefined && dates[i].asset.image !== '') {
+            if (dates[i].asset.image.params.file) {
+              dates[i].asset.media = H5P.getPath(dates[i].asset.image.params.file.path, contentId);
             }
-          }
-          else if (type === 'H5P.Video') {
-            if (media.params.sources) {
-              dates[i].asset.media = H5P.getPath(media.params.sources[0].path, contentId);
-              console.log('dates[i].asset.media = ' + dates[i].asset.media);
+          else if (dates[i].asset.webmedia !== undefined) {
+            dates[i].asset.media = dates[i].asset.webmedia;
             }
           }
         }
@@ -141,15 +131,7 @@
     window.jQuery = $;
 
     if (self.validate()) {
-      pp = self.getLibraryFilePath('H5P.TimelinePapiJo');
-      console.log('**************** pp = ' + pp);
-      
-      
-            path = '/drupal7dev/sites/default/files/h5p/development/h5p-timeline-papijo/library.json';
-                  console.log('path = ' + path);
-
     $.getJSON(self.getLibraryFilePath('library.json'), function (data) {
-//  $.getJSON(path, function (data) {
         new TimelineJS({
           type: 'timeline',
           width: '100%',
@@ -159,7 +141,6 @@
           start_zoom_adjust: self.options.timeline.defaultZoomLevel,
           embed_id: 'h5p-timeline'
         }, data.preloadedDependencies[0].majorVersion, data.preloadedDependencies[0].minorVersion);
-
       
         // Add background image if any:
         if (self.options.timeline.backgroundImage !== undefined) {

@@ -65,43 +65,94 @@
         "description": "Here you can add an asset to your timeline \"front page\"",
         "optional": true,
         "fields": [
-          {
-            "name": "media",
-            "type": "group",
-            "label": "Media",
-            "importance": "medium",
-            "fields": [
-              {
-                "name": "type",
-                "type": "library",
-                "label": "Type",
-                "importance": "medium",
-                "options": [
-                  "H5P.Image 1.1",
-                  "H5P.Video 1.6"
-                ],
-                "optional": true,
-                "description": "Optional media to display."
-              }
-            ]
-          },
-          {
-            "name": "credit",
-            "type": "text",
-            "label": "Credits",
-            "importance": "low",
-            "description": "Credits to the media",
-            "optional": true
-          },
-          {
-            "name": "caption",
-            "type": "text",
-            "label": "Caption",
-            "importance": "low",
-            "description": "Caption description goes here",
-            "optional": true
-          }
-        ]
+                {
+                  "name": "mediaselect",
+                  "type": "select",
+                  "label": "Select type of Asset",
+                  "importance": "medium",
+                  "optional": true,
+                  "description": "Select whether to insert an image (from local machine or internet) OR a link to a video on the internet",
+                  "options": [
+                    {
+                      "value": "img",
+                      "label": "Image"
+                    },
+                    {
+                      "value": "weblink",
+                      "label": "Link to a media on the Internet"
+                    }
+                  ]
+                },
+                {
+                  "name": "image",
+                  "type": "group",
+                  "label": "Media",
+                  "importance": "medium",                  
+                  "widget": "showWhen",
+                  "showWhen": {
+                    "rules": [
+                      {
+                        "field": "mediaselect",
+                        "equals": "img"
+                      }
+                    ]
+                  },
+                  "fields": [
+                    {
+                      "name": "type",
+                      "type": "library",
+                      "label": "Type",
+                      "importance": "medium",
+                      "options": [
+                        "H5P.Image 1.1"
+                      ],
+                      "optional": true,
+                      "description": "Optional image to display."
+                    }
+                  ]
+                },
+                {
+                  "name": "webmedia",
+                  "type": "text",
+                  "label": "Media",
+                  "importance": "low",
+                  "description": "Link to media URL (Twitter, YouTube, Flickr, Vimeo, Google Maps and SoundCloud are currently supported)",
+                  "optional": true,
+                  "widget": "showWhen",
+                  "showWhen": {
+                    "rules": [
+                      {
+                        "field": "mediaselect",
+                        "equals": "weblink"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "thumbnail",
+                  "type": "image",
+                  "label": "Thumbnail Image",
+                  "importance": "low",
+                  "description": "Add a thumbnail if needed, 32x32",
+                  "optional": true
+                },
+                {
+                  "name": "credit",
+                  "type": "text",
+                  "label": "Credit",
+                  "importance": "low",
+                  "description": "Credits to the media",
+                  "optional": true
+                },
+                {
+                  "name": "caption",
+                  "type": "text",
+                  "label": "Caption",
+                  "importance": "low",
+                  "description": "Caption text",
+                  "optional": true
+                }
+              ]
       },
       {
         "name": "date",
@@ -184,10 +235,37 @@
               "optional": true,
               "fields": [
                 {
-                  "name": "media",
+                  "name": "mediaselect",
+                  "type": "select",
+                  "label": "Select type of Asset",
+                  "importance": "medium",
+                  "optional": true,
+                  "description": "Select whether to insert an image (from local machine or internet) OR a link to a video on the internet",
+                  "options": [
+                    {
+                      "value": "img",
+                      "label": "Image"
+                    },
+                    {
+                      "value": "weblink",
+                      "label": "Link to a media on the Internet"
+                    }
+                  ]
+                },
+                {
+                  "name": "image",
                   "type": "group",
                   "label": "Media",
-                  "importance": "medium",
+                  "importance": "medium",                  
+                  "widget": "showWhen",
+                  "showWhen": {
+                    "rules": [
+                      {
+                        "field": "mediaselect",
+                        "equals": "img"
+                      }
+                    ]
+                  },
                   "fields": [
                     {
                       "name": "type",
@@ -195,13 +273,29 @@
                       "label": "Type",
                       "importance": "medium",
                       "options": [
-                        "H5P.Image 1.1",
-                        "H5P.Video 1.6"
+                        "H5P.Image 1.1"
                       ],
                       "optional": true,
-                      "description": "Optional media to display."
+                      "description": "Optional image to display."
                     }
                   ]
+                },
+                {
+                  "name": "webmedia",
+                  "type": "text",
+                  "label": "Media",
+                  "importance": "low",
+                  "description": "Link to media URL (Twitter, YouTube, Flickr, Vimeo, Google Maps and SoundCloud are currently supported)",
+                  "optional": true,
+                  "widget": "showWhen",
+                  "showWhen": {
+                    "rules": [
+                      {
+                        "field": "mediaselect",
+                        "equals": "weblink"
+                      }
+                    ]
+                  }
                 },
                 {
                   "name": "thumbnail",
