@@ -25,8 +25,22 @@
         },
         {
           "label": "Média",
-          "description": "Here you can add an asset to your timeline \"front page\"",
           "fields": [
+            {
+              "label": "Sélectionnez le type de ressource multimédia",
+              "description": "Choisissez d'insérer une image (de votre ordinateur local ou d'Internet) OU un lien vers une vidéo sur Internet.",
+              "options": [
+                {
+                  "label": "Image"
+                },
+                {
+                  "label": "Média en ligne"
+                }
+              ]
+            },
+            {
+              "label": "Image"
+            },
             {
               "label": "Adresse URL du média",
               "description": "Lien vers l'URL du fichier média (Twitter, YouTube, Flickr, Vimeo, Google Maps et SoundCloud sont autorisés à l'heure actuelle)"
@@ -71,6 +85,21 @@
               {
                 "label": "Média",
                 "fields": [
+                  {
+                    "label": "Sélectionnez le type de ressource multimédia",
+                    "description": "Choisissez d'insérer une image (de votre ordinateur local ou d'Internet) OU un lien vers une vidéo sur Internet.",
+                    "options": [
+                      {
+                        "label": "Image"
+                      },
+                      {
+                        "label": "Média en ligne"
+                      }
+                    ]
+                  },
+                  {
+                    "label": "Image"
+                  },
                   {
                     "label": "Adresse URL du média",
                     "description": "Lien vers l'URL du fichier média (Twitter, YouTube, Flickr, Vimeo, Wikipedia, Google Maps et SoundCloud sont autorisés à l'heure actuelle)."

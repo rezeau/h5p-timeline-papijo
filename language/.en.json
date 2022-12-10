@@ -13,6 +13,7 @@
         },
         {
           "label": "Default zoom level",
+          "default": "0",
           "description": "This will tweak the default zoom level. Equivilent to pressing the zoom in or zoom out button the specified number of times. Negative numbers zoom out. default is 0"
         },
         {
@@ -25,19 +26,33 @@
         },
         {
           "label": "Asset",
-          "description": "Here you can add an asset to your timeline \"front page\"",
           "fields": [
             {
-              "label": "Media",
-              "description": "Link to media URL (Twitter, YouTube, Flickr, Vimeo, Google Maps and SoundCloud are currently supported)"
+              "label": "Select type of Asset",
+              "description": "Select whether to insert an image (from local machine or internet) OR a link to a video on the internet",
+              "options": [
+                {
+                  "label": "Image"
+                },
+                {
+                  "label": "Media URL"
+                }
+              ]
             },
             {
-              "label": "Credits",
+              "label": "Image"
+            },
+            {
+              "label": "Media URL",
+              "description": "Link to media URL (Twitter, YouTube, Flickr, Vimeo and SoundCloud are currently supported)"
+            },
+            {
+              "label": "Credit",
               "description": "Credits to the media"
             },
             {
               "label": "Caption",
-              "description": "Caption description goes here"
+              "description": "Caption text"
             }
           ]
         },
@@ -70,13 +85,29 @@
               },
               {
                 "label": "Asset",
+                "description": "",
                 "fields": [
                   {
-                    "label": "Media",
-                    "description": "URL to the media (Twitter, YouTube, Flickr, Vimeo, Wikipedia, Google Maps and SoundCloud are currently supported)."
+                    "label": "Select type of Asset",
+                    "description": "Select whether to insert an image (from local machine or internet) OR a link to a video on the internet",
+                    "options": [
+                      {
+                        "label": "Image"
+                      },
+                      {
+                        "label": "Media URL"
+                      }
+                    ]
                   },
                   {
-                    "label": "Thumbnail",
+                    "label": "Image"
+                  },
+                  {
+                    "label": "Media URL",
+                    "description": "Link to media URL (Twitter, YouTube, Flickr, Vimeo, Google Maps and SoundCloud are currently supported)"
+                  },
+                  {
+                    "label": "Thumbnail Image",
                     "description": "Add a thumbnail if needed, 32x32"
                   },
                   {
@@ -97,6 +128,7 @@
           "description": "Add an era to your timeline",
           "field": {
             "label": "Era",
+            "description": "",
             "fields": [
               {
                 "label": "Start date",

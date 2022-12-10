@@ -2,7 +2,7 @@
 /**
  * Init a H5P object.
  **/
- var H5P = H5P || {};
+var H5P = H5P || {};
 /**
  *
  * @param object params
@@ -10,7 +10,7 @@
  * @param int contentId
  *  The nodes vid
  */
- H5P.TimelinePapiJo = (function ($) {
+H5P.TimelinePapiJo = (function ($) {
 
   function C(options, contentId) {
     var self = this;
@@ -30,11 +30,11 @@
     if (Object.keys(this.options.timeline.asset).length !== 0) {
       if (this.options.timeline.asset.mediaselect !== undefined) {
         if (this.options.timeline.asset.image !== undefined && this.options.timeline.asset.image !== '') {
-          if (this.options.timeline.asset.image.params.file) {
-            this.options.timeline.asset.media = H5P.getPath(this.options.timeline.asset.image.params.file.path, contentId);
+          if (this.options.timeline.asset.image.path) {
+            this.options.timeline.asset.media = H5P.getPath(this.options.timeline.asset.image.path, contentId);
           }
-        else if (this.options.timeline.asset.webmedia !== undefined) {
-          this.options.timeline.asset.media = this.options.timeline.asset.webmedia;
+          else if (this.options.timeline.asset.webmedia !== undefined) {
+            this.options.timeline.asset.media = this.options.timeline.asset.webmedia;
           }
         }
       }
@@ -48,21 +48,21 @@
         }
         if (dates[i].asset.mediaselect !== undefined) {
           if (dates[i].asset.image !== undefined && dates[i].asset.image !== '') {
-            if (dates[i].asset.image.params.file) {
-              dates[i].asset.media = H5P.getPath(dates[i].asset.image.params.file.path, contentId);
+            if (dates[i].asset.image.path) {
+              dates[i].asset.media = H5P.getPath(dates[i].asset.image.path, contentId);
             }
+          }
           else if (dates[i].asset.webmedia !== undefined) {
             dates[i].asset.media = dates[i].asset.webmedia;
-            }
           }
         }
       }
     }
     // Check if eras are legal - if not, remove them!
     if (this.options.timeline.era !== undefined) {
-      for (i=this.options.timeline.era.length-1; i >= 0; i--) {
-        if(this.options.timeline.era[i].startDate === undefined || this.options.timeline.era[i].endDate === undefined) {
-          this.options.timeline.era.splice(i,1);
+      for (i = this.options.timeline.era.length - 1; i >= 0; i--) {
+        if (this.options.timeline.era[i].startDate === undefined || this.options.timeline.era[i].endDate === undefined) {
+          this.options.timeline.era.splice(i, 1);
         }
       }
     }
@@ -131,7 +131,7 @@
     window.jQuery = $;
 
     if (self.validate()) {
-    $.getJSON(self.getLibraryFilePath('library.json'), function (data) {
+      $.getJSON(self.getLibraryFilePath('library.json'), function (data) {
         new TimelineJS({
           type: 'timeline',
           width: '100%',
@@ -157,4 +157,4 @@
   };
 
   return C;
- })(H5P.jQuery);
+})(H5P.jQuery);

@@ -62,7 +62,6 @@
         "type": "group",
         "label": "Asset",
         "importance": "low",
-        "description": "Here you can add an asset to your timeline \"front page\"",
         "optional": true,
         "fields": [
                 {
@@ -79,14 +78,14 @@
                     },
                     {
                       "value": "weblink",
-                      "label": "Link to a media on the Internet"
+                      "label": "Media URL"
                     }
                   ]
                 },
                 {
                   "name": "image",
-                  "type": "group",
-                  "label": "Media",
+                  "type": "image",
+                  "label": "Image",
                   "importance": "medium",                  
                   "widget": "showWhen",
                   "showWhen": {
@@ -96,27 +95,14 @@
                         "equals": "img"
                       }
                     ]
-                  },
-                  "fields": [
-                    {
-                      "name": "type",
-                      "type": "library",
-                      "label": "Type",
-                      "importance": "medium",
-                      "options": [
-                        "H5P.Image 1.1"
-                      ],
-                      "optional": true,
-                      "description": "Optional image to display."
-                    }
-                  ]
+                  }
                 },
                 {
                   "name": "webmedia",
                   "type": "text",
-                  "label": "Media",
+                  "label": "Media URL",
                   "importance": "low",
-                  "description": "Link to media URL (Twitter, YouTube, Flickr, Vimeo, Google Maps and SoundCloud are currently supported)",
+                  "description": "Link to media URL (Twitter, YouTube, Flickr, Vimeo and SoundCloud are currently supported)",
                   "optional": true,
                   "widget": "showWhen",
                   "showWhen": {
@@ -129,20 +115,25 @@
                   }
                 },
                 {
-                  "name": "thumbnail",
-                  "type": "image",
-                  "label": "Thumbnail Image",
-                  "importance": "low",
-                  "description": "Add a thumbnail if needed, 32x32",
-                  "optional": true
-                },
-                {
                   "name": "credit",
                   "type": "text",
                   "label": "Credit",
                   "importance": "low",
                   "description": "Credits to the media",
-                  "optional": true
+                  "optional": true,                  
+                  "widget": "showWhen",
+                  "showWhen": {
+                    "rules": [
+                      {
+                        "field": "mediaselect",
+                        "equals": "img"
+                      },
+                      {
+                        "field": "mediaselect",
+                        "equals": "weblink"
+                      }
+                    ]
+                  }
                 },
                 {
                   "name": "caption",
@@ -150,7 +141,20 @@
                   "label": "Caption",
                   "importance": "low",
                   "description": "Caption text",
-                  "optional": true
+                  "optional": true,                  
+                  "widget": "showWhen",
+                  "showWhen": {
+                    "rules": [
+                      {
+                        "field": "mediaselect",
+                        "equals": "img"
+                      },
+                      {
+                        "field": "mediaselect",
+                        "equals": "weblink"
+                      }
+                    ]
+                  }
                 }
               ]
       },
@@ -248,14 +252,14 @@
                     },
                     {
                       "value": "weblink",
-                      "label": "Link to a media on the Internet"
+                      "label": "Media URL"
                     }
                   ]
                 },
                 {
                   "name": "image",
-                  "type": "group",
-                  "label": "Media",
+                  "type": "image",
+                  "label": "Image",
                   "importance": "medium",                  
                   "widget": "showWhen",
                   "showWhen": {
@@ -265,25 +269,12 @@
                         "equals": "img"
                       }
                     ]
-                  },
-                  "fields": [
-                    {
-                      "name": "type",
-                      "type": "library",
-                      "label": "Type",
-                      "importance": "medium",
-                      "options": [
-                        "H5P.Image 1.1"
-                      ],
-                      "optional": true,
-                      "description": "Optional image to display."
-                    }
-                  ]
+                  }
                 },
                 {
                   "name": "webmedia",
                   "type": "text",
-                  "label": "Media",
+                  "label": "Media URL",
                   "importance": "low",
                   "description": "Link to media URL (Twitter, YouTube, Flickr, Vimeo, Google Maps and SoundCloud are currently supported)",
                   "optional": true,
@@ -311,7 +302,20 @@
                   "label": "Credit",
                   "importance": "low",
                   "description": "Credits to the media",
-                  "optional": true
+                  "optional": true,                  
+                  "widget": "showWhen",
+                  "showWhen": {
+                    "rules": [
+                      {
+                        "field": "mediaselect",
+                        "equals": "img"
+                      },
+                      {
+                        "field": "mediaselect",
+                        "equals": "weblink"
+                      }
+                    ]
+                  }
                 },
                 {
                   "name": "caption",
@@ -319,7 +323,20 @@
                   "label": "Caption",
                   "importance": "low",
                   "description": "Caption text",
-                  "optional": true
+                  "optional": true,                  
+                  "widget": "showWhen",
+                  "showWhen": {
+                    "rules": [
+                      {
+                        "field": "mediaselect",
+                        "equals": "img"
+                      },
+                      {
+                        "field": "mediaselect",
+                        "equals": "weblink"
+                      }
+                    ]
+                  }
                 }
               ]
             }
