@@ -24,13 +24,21 @@
         "tags": [
           "strong",
           "em",
-          "del",
+          "u",
           "a",
           "ul",
           "ol",
-          "hr",
-          "code"
-        ]
+          "h2",
+          "h4",
+          "h5",
+          "hr"
+        ],
+        "font": {
+          "size": true,
+          "family": true,
+          "color": true,
+          "background": true
+        }
       },
       {
         "name": "defaultZoomLevel",
@@ -115,33 +123,40 @@
                   }
                 },
                 {
-                  "name": "credit",
-                  "type": "text",
-                  "label": "Credit",
-                  "importance": "low",
-                  "description": "Credits to the media",
-                  "optional": true,                  
-                  "widget": "showWhen",
-                  "showWhen": {
-                    "rules": [
-                      {
-                        "field": "mediaselect",
-                        "equals": "img"
-                      },
-                      {
-                        "field": "mediaselect",
-                        "equals": "weblink"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "name": "caption",
-                  "type": "text",
-                  "label": "Caption",
-                  "importance": "low",
-                  "description": "Caption text",
-                  "optional": true,                  
+                  "name": "info",
+                  "label": "Information",
+                  "importance": "high",
+                  "type": "group",
+                  "expanded": true,
+                  "fields": [
+                    {
+                      "name": "credit",
+                      "type": "text",
+                      "label": "Credit",
+                      "importance": "low",
+                      "description": "Credits to the media",
+                      "optional": true,
+                      "widget": "html",
+                      "tags": [
+                        "a",
+                        "strong",
+                        "em"
+                      ]
+                    },
+                    {
+                      "name": "caption",
+                      "type": "text",
+                      "label": "Caption",
+                      "importance": "low",
+                      "description": "Caption text",
+                      "optional": true,
+                      "widget": "html",
+                      "tags": [
+                        "strong",
+                        "em"
+                      ]
+                    }
+                  ],                
                   "widget": "showWhen",
                   "showWhen": {
                     "rules": [
@@ -211,16 +226,21 @@
               "tags": [
                 "strong",
                 "em",
-                "del",
+                "u",
                 "a",
                 "ul",
                 "ol",
                 "h2",
-                "h3",
-                "hr",
-                "pre",
-                "code"
-              ]
+                "h4",
+                "h5",
+                "hr"
+              ],
+              "font": {
+                "size": true,
+                "family": true,
+                "color": true,
+                "background": true
+              }
             },
             {
               "name": "tag",
@@ -297,33 +317,40 @@
                   "optional": true
                 },
                 {
-                  "name": "credit",
-                  "type": "text",
-                  "label": "Credit",
-                  "importance": "low",
-                  "description": "Credits to the media",
-                  "optional": true,                  
-                  "widget": "showWhen",
-                  "showWhen": {
-                    "rules": [
-                      {
-                        "field": "mediaselect",
-                        "equals": "img"
-                      },
-                      {
-                        "field": "mediaselect",
-                        "equals": "weblink"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "name": "caption",
-                  "type": "text",
-                  "label": "Caption",
-                  "importance": "low",
-                  "description": "Caption text",
-                  "optional": true,                  
+                  "name": "info",
+                  "label": "Information",
+                  "importance": "high",
+                  "type": "group",
+                  "expanded": true,
+                  "fields": [
+                    {
+                      "name": "credit",
+                      "type": "text",
+                      "label": "Credit",
+                      "importance": "low",
+                      "description": "Credits to the media",
+                      "optional": true,
+                      "widget": "html",
+                      "tags": [
+                        "a",
+                        "strong",
+                        "em"
+                      ]
+                    },
+                    {
+                      "name": "caption",
+                      "type": "text",
+                      "label": "Caption",
+                      "importance": "low",
+                      "description": "Caption text",
+                      "optional": true,
+                      "widget": "html",
+                      "tags": [
+                        "strong",
+                        "em"
+                      ]
+                    }
+                  ],                
                   "widget": "showWhen",
                   "showWhen": {
                     "rules": [

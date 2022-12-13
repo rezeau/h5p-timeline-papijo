@@ -46,12 +46,17 @@
               "description": "Lien vers l'URL du fichier média (Twitter, YouTube, Flickr, Vimeo, Google Maps et SoundCloud sont autorisés à l'heure actuelle)"
             },
             {
-              "label": "Crédits",
-              "description": "Crédits du fichier média"
-            },
-            {
-              "label": "Légende",
-              "description": "Saisissez ici la légende du fichier média"
+              "label": "Information",
+              "fields": [
+                {
+                  "label": "Crédits",
+                  "description": "Crédits du fichier média"
+                },
+                {
+                  "label": "Légende",
+                  "description": "Légende du fichier média"
+                }
+              ]
             }
           ]
         },
@@ -109,12 +114,17 @@
                     "description": "Ajoutez au besoin une miniature 32x32"
                   },
                   {
-                    "label": "Crédits",
-                    "description": "Crédits du fichier média"
-                  },
-                  {
-                    "label": "Légende",
-                    "description": "Légende du fichier média"
+                    "label": "Information",
+                    "fields": [
+                      {
+                        "label": "Crédits",
+                        "description": "Crédits du fichier média"
+                      },
+                      {
+                        "label": "Légende",
+                        "description": "Légende du fichier média"
+                      }
+                    ]
                   }
                 ]
               }
