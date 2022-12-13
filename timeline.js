@@ -31,13 +31,15 @@ H5P.TimelinePapiJo = (function ($) {
       if (this.options.timeline.asset.mediaselect !== undefined) {
         this.options.timeline.asset.credit = this.options.timeline.asset.info.credit;
         this.options.timeline.asset.caption = this.options.timeline.asset.info.caption;
-        if (this.options.timeline.asset.image !== undefined && this.options.timeline.asset.image !== '') {
-          if (this.options.timeline.asset.image.path) {
-            this.options.timeline.asset.media = H5P.getPath(this.options.timeline.asset.image.path, contentId);
+        if (this.options.timeline.asset.mediaselect === 'img') {
+          if (this.options.timeline.asset.image !== undefined && this.options.timeline.asset.image !== '') {
+            if (this.options.timeline.asset.image.path) {
+              this.options.timeline.asset.media = H5P.getPath(this.options.timeline.asset.image.path, contentId);
+            }
           }
-          else if (this.options.timeline.asset.webmedia !== undefined) {
+        }
+        else if (this.options.timeline.asset.webmedia !== undefined) {
             this.options.timeline.asset.media = this.options.timeline.asset.webmedia;
-          }
         }
       }
     }
@@ -51,9 +53,11 @@ H5P.TimelinePapiJo = (function ($) {
         if (dates[i].asset.mediaselect !== undefined) {
           dates[i].asset.credit = dates[i].asset.info.credit;
           dates[i].asset.caption = dates[i].asset.info.caption;
-          if (dates[i].asset.image !== undefined && dates[i].asset.image !== '') {
-            if (dates[i].asset.image.path) {
-              dates[i].asset.media = H5P.getPath(dates[i].asset.image.path, contentId);
+          if (dates[i].asset.mediaselect === 'img') {
+            if (dates[i].asset.image !== undefined && dates[i].asset.image !== '') {
+              if (dates[i].asset.image.path) {
+                dates[i].asset.media = H5P.getPath(dates[i].asset.image.path, contentId);
+              }
             }
           }
           else if (dates[i].asset.webmedia !== undefined) {
