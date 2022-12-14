@@ -95,19 +95,22 @@
   width: 100%;
   word-wrap: break-word;
 }
-
-/*papijo modifs*/
-
 #h5p-timeline .vco-timeline:not(.vco-skinny) .vco-slider .slider-item .content .content-container .text {
   display: inline-block !important;
-  /*width: 50% !important;*/
+  width: 50% !important;
   max-width: none;
   vertical-align: top;
 }
-
+#h5p-timeline .vco-timeline:not(.vco-skinny) .vco-slider .slider-item .content .content-container .text h2,
+#h5p-timeline .vco-timeline:not(.vco-skinny) .vco-slider .slider-item .content .content-container .text h3 {
+  width: 100% !important;
+}
 #h5p-timeline .vco-timeline:not(.vco-skinny) .vco-slider .slider-item .content .content-container .media {
   display: inline-block !important;
   max-width: 40%;
+  min-width: inherit;
+  margin-right: 20px;
+  float: none !important;
 }
 .h5p-timeline-data-not-valid {
   padding: 1em;
@@ -118,22 +121,11 @@
   border-radius: .5em;
 }
 
-/*papijo modifs*/
-#h5p-timeline .vco-storyjs h3,
-#h5p-timeline .vco-storyjs h2.start {
-  font-family: sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #646464;
-  font-size: 22px;
-}
+/* papi jo mods */
 
-#h5p-timeline .vco-timeline .vco-navigation .timenav .content .marker .flag .flag-content h3 {
-  margin-top: 5px;
-  font-size: 0.8em;
-}
-
-#h5p-timeline .vco-storyjs .text, #h5p-timeline .vco-storyjs .vco-feature p, #h5p-timeline .vco-storyjs h2.date {
+#h5p-timeline .vco-storyjs .text, 
+#h5p-timeline .vco-storyjs .vco-feature p, 
+#h5p-timeline .vco-storyjs h2.date {
   color: #646464;
   font-family: "Georgia",Times New Roman,Times,serif;
   font-size: 16px;
@@ -142,4 +134,17 @@
 
 #h5p-timeline .vco-timeline .vco-navigation .timenav .content .flag-content h3 {
   color: #333;
+}
+
+#h5p-timeline .vco-timeline .vco-navigation .timenav .content .marker .flag .flag-content h3 {
+  margin-top: 5px;
+  font-size: 0.8em;
+}
+#h5p-timeline .vco-storyjs h3,
+#h5p-timeline .vco-storyjs h2.start {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #646464;
+  font-size: 22px;
 }

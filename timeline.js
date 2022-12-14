@@ -25,9 +25,9 @@ H5P.TimelinePapiJo = (function ($) {
     }, options);
 
     // Need to create the URL for all H5P.Images
-    // Detect potential asset for front page.
-    
     if (Object.keys(this.options.timeline.asset).length !== 0) {
+      this.options.timeline.text = self.justify(this.options.timeline.text);
+      // Detect potential asset for front page.
       if (this.options.timeline.asset.mediaselect !== undefined) {
         this.options.timeline.asset.credit = this.options.timeline.asset.info.credit;
         this.options.timeline.asset.caption = this.options.timeline.asset.info.caption;
@@ -47,6 +47,7 @@ H5P.TimelinePapiJo = (function ($) {
     if (this.options.timeline.date !== undefined) {
       var dates = this.options.timeline.date;
       for (i = 0; i < dates.length; i++) {
+        dates[i].text = self.justify(dates[i].text);
         if (dates[i].asset.thumbnail !== undefined) {
           dates[i].asset.thumbnail = H5P.getPath(dates[i].asset.thumbnail.path, contentId);
         }
@@ -162,6 +163,22 @@ H5P.TimelinePapiJo = (function ($) {
         'class': 'h5p-timeline-data-not-valid'
       }));
     }
+  };
+
+  /**
+   * Replace text-align: right with text-align: justify. 
+   * Because text-align: justify is not available in H5P text editor and I find align right plain ugly!
+   * @method justify
+   * @return {string}
+   */
+  C.prototype.justify = function (str) {
+        const regex = /text-align: right;/gm;
+        const subst = 'text-align: justify;';
+        nbMatches = ((str || '').match(regex) || []).length;
+        if (nbMatches !== 0) {
+          str = str.replace(regex, subst);
+        }        
+    return str;
   };
 
   return C;
