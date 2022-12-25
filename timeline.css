@@ -136,18 +136,31 @@
 #h5p-timeline .vco-timeline .vco-navigation .timenav .content .marker .flag .flag-content h3 {
   margin-top: 5px;
   font-size: 0.7em;
+  font-variant-caps: normal;
+  text-transform: uppercase;
 }
 #h5p-timeline .vco-storyjs h3,
 #h5p-timeline .vco-storyjs h2.start {
   font-family: sans-serif;
-  text-transform: uppercase;
+  font-variant-caps: small-caps;
   font-weight: 700;
   color: #646464;
   font-size: 22px;
 }
 
-.vco-timeline .vco-navigation .timenav .content .marker.active .flag .flag-content h3,
-.vco-timeline .vco-navigation .timenav .content .marker.active .flag-small .flag-content h3 {
+#h5p-timeline .vco-timeline .vco-navigation .timenav .content .marker.active .flag .flag-content h3,
+#h5p-timeline .vco-timeline .vco-navigation .timenav .content .marker.active .flag-small .flag-content h3 {
   color: #08c!important;
   margin-top: 5px;
+}
+
+#h5p-timeline .thumbnail.thumb-audio,
+#h5p-timeline .thumbnail.thumb-photo,
+#h5p-timeline .thumbnail.thumb-plaintext,
+#h5p-timeline .thumbnail.thumb-quote,
+#h5p-timeline .thumbnail.thumb-vimeo,
+#h5p-timeline .thumbnail.thumb-wikipedia,
+#h5p-timeline .thumbnail.thumb-youtube {
+  background-image:url(timeline.png?v4.4);
+  background-repeat:no-repeat;
 }

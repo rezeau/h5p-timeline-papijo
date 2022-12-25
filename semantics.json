@@ -127,7 +127,7 @@
                   "label": "Information",
                   "importance": "high",
                   "type": "group",
-                  "expanded": true,
+                  "expanded": false,
                   "fields": [
                     {
                       "name": "credit",
@@ -186,6 +186,7 @@
           "label": "Date",
           "importance": "medium",
           "description": "Date",
+          "expanded": false,
           "fields": [
             {
               "name": "startDate",
@@ -241,14 +242,6 @@
                 "color": true,
                 "background": true
               }
-            },
-            {
-              "name": "tag",
-              "type": "text",
-              "label": "Tags",
-              "importance": "medium",
-              "description": "Enter Tags (categories)",
-              "optional": true
             },
             {
               "name": "asset",
@@ -309,19 +302,11 @@
                   }
                 },
                 {
-                  "name": "thumbnail",
-                  "type": "image",
-                  "label": "Thumbnail Image",
-                  "importance": "low",
-                  "description": "Add a thumbnail if needed, 32x32",
-                  "optional": true
-                },
-                {
                   "name": "info",
                   "label": "Information",
                   "importance": "high",
                   "type": "group",
-                  "expanded": true,
+                  "expanded": false,
                   "fields": [
                     {
                       "name": "credit",
@@ -384,6 +369,7 @@
           "label": "Era",
           "importance": "medium",
           "description": "",
+          "expanded": false,
           "fields": [
             {
               "name": "startDate",
@@ -412,33 +398,6 @@
               "label": "Headline",
               "importance": "medium",
               "description": "Era headline"
-            },
-            {
-              "name": "text",
-              "type": "text",
-              "label": "Text",
-              "importance": "medium",
-              "widget": "html",
-              "optional": true,
-              "description": "Era body",
-              "tags": [
-                "strong",
-                "em",
-                "del",
-                "a",
-                "ul",
-                "ol",
-                "hr",
-                "code"
-              ]
-            },
-            {
-              "name": "tag",
-              "type": "text",
-              "label": "Tag",
-              "importance": "medium",
-              "description": "Era tags (categories)",
-              "optional": true
             }
           ]
         }
@@ -453,7 +412,7 @@
         "options": [
           {
             "value": "af",
-            "label": "Afrikaans"
+            "label": "Afrikaans" 
           },
           {
             "value": "ar",
